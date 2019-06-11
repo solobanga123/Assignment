@@ -3,7 +3,7 @@
   <title>Database Test</title>
  </head>
  <body>
- <?php echo '<p>Xin chao</p>'; 
+ <?php echo '<p>Xin chao GCD</p>'; 
  
  ?> 
      <a href="ConnectToDB.php" target="_blank" >Connect database</a>
