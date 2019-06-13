@@ -18,10 +18,7 @@ list-style: none;
             <div class="form-group">
             <label for="InputFile">File input</label>
             <input type="file" name="file" id="InputFile">
-            <p class="help-block">Upload Files với dung lượng nhỏ hơn 100 KiloBytes</p>
-            <!-- Thong bao loi  -->
-            <?php if(isset($smsg)){ ?><div class="alert alert-success" role="alert"> <?php echo $smsg; ?> </div><?php } ?>
-            <?php if(isset($fmsg)){ ?><div class="alert alert-danger" role="alert"> <?php echo $fmsg; ?> </div><?php } ?>
+            <p class="help-block">Upload Files </p>
       </div>
         <button class="btn btn-lg btn-primary btn-block" type="submit">Upload</button>
    </form>
@@ -59,7 +56,7 @@ if($pdo === false){
     $type = $_FILES['file']['type'];
     echo $name;
     echo $size;
-    echo $type;
+    //echo $type;
     if(isset($name) && !empty($name)){
  
     // lay duoi file
