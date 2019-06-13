@@ -54,9 +54,7 @@ if($pdo === false){
     $name = $_FILES['file']['name'];
     $size = $_FILES['file']['size'];
     $type = $_FILES['file']['type'];
-    echo $name;
-    echo $size;
-    //echo $type;
+   
     if(isset($name) && !empty($name)){
  
     // lay duoi file

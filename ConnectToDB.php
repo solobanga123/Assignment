@@ -36,17 +36,34 @@ $stmt->setFetchMode(PDO::FETCH_ASSOC);
 $stmt->execute();
 $resultSet = $stmt->fetchAll();
 echo '<p>Students information:</p>';
-foreach ($resultSet as $row) {
-	echo $row['stuid'];
-        echo "    ";
-        echo $row['fname'];
-        echo "    ";
-        echo $row['email'];
-        echo "    ";
-        echo $row['classname'];
-        echo "<br/>";
-}
 
 ?>
+<table class="table">
+    <thead>
+      <tr>
+        <th>Student ID</th>
+        <th>Name</th>
+        <th>email</th>
+        <th>Class</th>
+      </tr>
+    </thead>
+    <tbody>
+      <?php
+      // tạo vòng lặp 
+         //while($r = mysql_fetch_array($result)){
+             foreach ($resultSet as $row) {
+      ?>
+      <tr>
+        <td scope="row"><?php echo $row['stuid'] ?></td>
+        <td><?php echo $row['fname'] ?></td>
+        <td><?php echo $row['email'] ?></td>
+        <td><?php echo $row['classname'] ?></td>
+        
+      </tr>
+      <?php
+        }
+      ?>
+    </tbody>
+  </table>
 </body>
 </html>
