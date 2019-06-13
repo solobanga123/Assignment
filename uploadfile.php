@@ -68,26 +68,28 @@ if($pdo === false){
         $location = "uploads/";
       
         if(move_uploaded_file($name, $location.$name)){
-            $smsg = "Upload thành công !";
             // dua thong tin file vao csdl
             $query = "INSERT INTO upload(name, size, type, location) VALUES ('$name', '$size', '$type', '$location$name')";
             $stmt = $pdo->prepare($query);
             
                  if($stmt->execute() == TRUE){
-                    echo "Record inserted successfully.";
+                    echo "Upload file successfully.";
                     } 
                  else {
-                     echo "Upload Thất bại";
+                     echo "Upload failed";
                  }
         }
     else{
-        $fmsg = "Chỉ hỗ trợ file pdf và dung lượng không quá 100 KiloBytes";
+        echo "Chỉ hỗ trợ file pdf và dung lượng không quá 100 KiloBytes";
     }
  
     }else{
-        $fmsg = "Chọn file upload";
+        echo "Chọn file upload";
     }
     }
+ else {
+       echo "File name must be not null"; 
+}
 ?>
 
 </body>
