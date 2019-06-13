@@ -1,28 +1,46 @@
 <!DOCTYPE html>
+<?php
+   if(isset($_FILES['image'])){
+      $errors= array();
+      $file_name = $_FILES['image']['name'];
+      $file_size = $_FILES['image']['size'];
+      $file_tmp = $_FILES['image']['tmp_name'];
+      $file_type = $_FILES['image']['type'];
+      $file_ext=strtolower(end(explode('.',$_FILES['image']['name'])));
+       
+      $expensions= array("jpeg","jpg","png");
+       
+      if(in_array($file_ext,$expensions)=== false){
+         $errors[]="Chỉ hỗ trợ upload file JPEG hoặc PNG.";
+      }
+       
+      if($file_size > 2097152) {
+         $errors[]='Kích thước file không được lớn hơn 2MB';
+      }
+       
+      if(empty($errors)==true) {
+         move_uploaded_file($file_tmp,"images/".$file_name);
+         echo "Success";
+      }else{
+         print_r($errors);
+      }
+   }
+?>
 <html>
-    <head>
-<title>upload file</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<style>
-li {
-list-style: none;
-}
-</style>
-</head>
-<body>
-<h1>UPLOAD FILE</h1>
-
-<ul>
-   <form class="form-signin" method="POST" enctype="multipart/form-data">
-            <h2 class="form-signin-heading">Upload File</h2>
-            <div class="form-group">
-            <label for="InputFile">File input</label>
-            <input type="file" name="file" id="InputFile">
-            <p class="help-block">Upload Files </p>
-      </div>
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Upload</button>
-   </form>
-</ul>
+   <body>
+       
+      <form action = "" method = "POST" enctype = "multipart/form-data">
+         <input type = "file" name = "image" />
+         <input type = "submit"/>
+             
+         <ul>
+            <li>Sent file: <?php echo $_FILES['image']['name'];  ?>
+            <li>File size: <?php echo $_FILES['image']['size'];  ?>
+            <li>File type: <?php echo $_FILES['image']['type'] ?>
+         </ul>
+             
+      </form>
+       
 
 <?php
 
@@ -63,11 +81,10 @@ if($pdo === false){
     // kiem tra xem co dung la file hinh anh hay khong
     if( size<=$max_size){
         $location = "uploads/";
-      echo move_uploaded_file($name, $location.$name);
         if(move_uploaded_file($name, $location.$name)){
       
             // dua thong tin file vao csdl
-            $query = "INSERT INTO upload(name, size, type, location) VALUES ('$name', '$size', '$type', '$location$name')";
+            $query = "INSERT INTO upload(name, size, type) VALUES ('$name', '$size', '$type')";
             $stmt = $pdo->prepare($query);
             
                  if($stmt->execute() == TRUE){
