@@ -51,7 +51,7 @@ if($pdo === false){
 
 <?php
     // gioi han file upload khong qua 100kb
-    $max_size = 100000;
+    $max_size = 100000000;
  
     // lay thong tin file upload
     $name = $_FILES['file']['name'];
@@ -80,7 +80,7 @@ if($pdo === false){
                  }
         }
     else{
-        echo "Chỉ hỗ trợ file pdf và dung lượng không quá 100 KiloBytes";
+        echo "Chỉ hỗ trợ file dung lượng không quá 100 KiloBytes";
     }
  
     }else{
