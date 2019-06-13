@@ -70,7 +70,7 @@ if($pdo === false){
         if(move_uploaded_file($name, $location.$name)){
             $smsg = "Upload thành công !";
             // dua thong tin file vao csdl
-            $query = "INSERT INTO `upload` (name, size, type, location) VALUES ('$name', '$size', '$type', '$location$name')";
+            $query = "INSERT INTO upload(name, size, type, location) VALUES ('$name', '$size', '$type', '$location$name')";
             $stmt = $pdo->prepare($query);
             
                  if($stmt->execute() == TRUE){
