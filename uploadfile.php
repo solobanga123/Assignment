@@ -65,9 +65,9 @@ if($pdo === false){
     // kiem tra xem co dung la file hinh anh hay khong
     if( size<=$max_size){
         $location = "uploads/";
+      echo move_uploaded_file($name, $location.$name);
+        if(move_uploaded_file($name, $location.$name)){
       
-       // if(move_uploaded_file($name, $location.$name)){
-         if(move_uploaded_file($name, $location)){
             // dua thong tin file vao csdl
             $query = "INSERT INTO upload(name, size, type, location) VALUES ('$name', '$size', '$type', '$location$name')";
             $stmt = $pdo->prepare($query);
