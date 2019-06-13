@@ -46,7 +46,7 @@ if($pdo === false){
          $name = $_FILES['file']['name'];
          $size = $_FILES['file']['size'];
          $type = $_FILES['file']['type'];
-            $query = "INSERT INTO upload(name, size, type) VALUES ('$name', '$size', '$type')";
+            $query = "INSERT INTO upload(name, size, type) VALUES ('$name', $size, '$type')";
             $stmt = $pdo->prepare($query);
             
                  if($stmt->execute() == TRUE){
