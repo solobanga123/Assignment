@@ -38,6 +38,7 @@ $resultSet = $stmt->fetchAll();
 echo '<p>Students information:</p>';
 
 ?>
+<div id="container">
 <table class="table table-bordered table-condensed">
     <thead>
       <tr>
@@ -67,5 +68,6 @@ echo '<p>Students information:</p>';
       ?>
     </tbody>
   </table>
+</div>
 </body>
 </html>
