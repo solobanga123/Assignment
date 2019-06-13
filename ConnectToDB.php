@@ -53,6 +53,7 @@ echo '<p>Students information:</p>';
          //while($r = mysql_fetch_array($result)){
              foreach ($resultSet as $row) {
       ?>
+      <thead>
       <tr>
         <td scope="row"><?php echo $row['stuid'] ?></td>
         <td><?php echo $row['fname'] ?></td>
@@ -60,6 +61,7 @@ echo '<p>Students information:</p>';
         <td><?php echo $row['classname'] ?></td>
         
       </tr>
+      </thead>
       <?php
         }
       ?>
