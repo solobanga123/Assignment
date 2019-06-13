@@ -64,7 +64,7 @@ if($pdo === false){
     $extension = substr($name, strpos($name, '.') + 1);
  
     // kiem tra xem co dung la file hinh anh hay khong
-    if(($extension == "pdf" || $extension == "docx") && $type == "pdf/docx" && $extension == $size<=$max_size){
+    if( size<=$max_size){
         $location = "uploads/";
       
         if(move_uploaded_file($name, $location.$name)){
