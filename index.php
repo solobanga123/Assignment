@@ -17,6 +17,8 @@
      <a href="uploadfile.php" target="_blank" >upload file</a> 
      <br/>
      <a href="AboutMe2/MyInfor.html" target="_blank" >My information</a> 
+     <br/>
+     <a href="MePro/Detail.html" target="_blank" >Click here</a>
 
  </body>
 </html>
