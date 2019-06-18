@@ -15,6 +15,8 @@
     <a href="DeleteData.php" target="_blank" >Delete data to the database</a> 
      <br/>
      <a href="uploadfile.php" target="_blank" >upload file</a> 
+     <br/>
+     <a href="AboutMe2/MyInfor.html" target="_blank" >My information</a> 
 
  </body>
 </html>
