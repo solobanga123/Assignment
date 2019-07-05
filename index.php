@@ -13,7 +13,7 @@
      <br/>
      <a href="AboutMe2/MyInfor.html" target="_blank" >My Information</a> 
      <br/>
-     <a href="MePro/Detail.html" target="_blank" >Click here</a>
+  
 
 </body>
 
