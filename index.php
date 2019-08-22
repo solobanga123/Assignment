@@ -223,16 +223,16 @@ ga('create', 'UA-30027142-1', 'w3layouts.com');
 				</div> 
 				<div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
 					<ul class="nav navbar-nav">
-						<li class="active"><a href="InsertData.html" class="act">Insert</a></li>	
+						<li class="active"><a href="InsertData.php" class="act">Insert</a></li>	
 						<!-- Mega Menu -->
 						<li class="dropdown">
-							<li class="active"><a href="UpdateData.html" class="act">Update</a></li>
+							<li class="active"><a href="UpdateData.php" class="act">Update</a></li>
 							<li class="dropdown">
-							<li class="active"><a href="ConnectToDB.html" class="act">View</a></li>
+							<li class="active"><a href="ConnectToDB.php" class="act">View</a></li>
 
 							
-						<li><a href="DeleteData.html">Delete</a></li>
-						<li><a href="Home.html">Home</a></li>
+						<li><a href="DeleteData.php">Delete</a></li>
+						<li><a href="Home.php">Home</a></li>
 					</ul>
 				</div>
 			</nav>
