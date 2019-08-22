@@ -232,7 +232,7 @@ ga('create', 'UA-30027142-1', 'w3layouts.com');
 
 							
 						<li><a href="DeleteData.php">Delete</a></li>
-						<li><a href="Home.php">Home</a></li>
+						<li><a href="index.php">Home</a></li>
 					</ul>
 				</div>
 			</nav>
