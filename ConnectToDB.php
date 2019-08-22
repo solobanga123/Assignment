@@ -1,72 +1,75 @@
+
+
 <!DOCTYPE html>
 <html>
+<title>ViewData</title>
+<head>
+    <meta charset="UTF-8">
+    <title>Payment</title>
+    <link rel="stylesheet" href="css/Style1.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <meta name="viewport" content="width=devicew-idth,initial-scale=1.0"> 
+    <link rel="stylesheet" href="css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous"> <!-- fontawesome -->
+    <!-- <meta http-equiv="refresh" content="3"> -->
+    <link href="css/fonts1/css" rel="stylesheet"> <!-- font-family -->
+    <link href="css/fonts2/css" rel="stylesheet"> <!-- font-family -->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="js/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="js/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+</head>
+<!DOCTYPE html>
+<html lang="en">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="css/w3.css">
+<link rel="stylesheet" href="css/css.css>
+<link rel="stylesheet" href="css/font-awesome.min.css">
+<style>
+body {font-family: "Lato", sans-serif}
+.mySlides {display: none}
+</style>
 <body>
+
+<!-- Navbar -->
+<div class="w3-top">
+  <div class="w3-bar w3-black w3-card">
+    <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+   <a href="InsertData.html" class="w3-bar-item w3-button w3-padding-large">Insert</a>
+    <a href="UpdateData.html" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Update</a>
+    <a href="DeleteData.html" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Delete</a>
+    <a href="ConnecttoDB.html" class="w3-bar-item w3-button w3-padding-large w3-hide-small">View</a> 
+<a href="index.html" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Home</a>   
+    <a href="javascript:void(0)" class="w3-padding-large w3-hover-red w3-hide-small w3-right"><i class="fa fa-search"></i></a>
+  </div>
+</div>
+    <head>
+<body style='background-color:#EFF8FB;margin-top:10%'>
+<div align="center">
 
 <h1>DATABASE CONNECTION</h1>
 
-<?php
-ini_set('display_errors', 1);
-echo "Hello Cloud computing class 0818!";
-?>
-
-<?php
-
-
-if (empty(getenv("DATABASE_URL"))){
-    echo '<p>The DB does not exist</p>';
-    $pdo = new PDO('pgsql:host=localhost;port=5432;dbname=mydb', 'postgres', '123456');
-}  else {
-     echo '<p>The DB exists</p>';
-     echo getenv("dbname");
-   $db = parse_url(getenv("DATABASE_URL"));
-   $pdo = new PDO("pgsql:" . sprintf(
-        "host=ec2-174-129-240-67.compute-1.amazonaws.com;port=5432;user=wrflrxtavasvqh;password=fbfef36049fbd28f1200e3a775a389e014838e86522765e67782f9cf7a3f516b;dbname=d3mmhribgmc6bf",
-        $db["host"],
-        $db["port"],
-        $db["user"],
-        $db["pass"],
-        ltrim($db["path"], "/")
-   ));
-}  
-
-$sql = "SELECT * FROM student ORDER BY stuid";
-$stmt = $pdo->prepare($sql);
-//Thiết lập kiểu dữ liệu trả về
-$stmt->setFetchMode(PDO::FETCH_ASSOC);
-$stmt->execute();
-$resultSet = $stmt->fetchAll();
-echo '<p>Students information:</p>';
-
-?>
-<div id="container">
+Hello Cloud computing class GCD0821!</div>
+<p>The DB exists</p><p>Invoice information:</p><div id="container">
 <table class="table table-bordered table-condensed">
     <thead>
       <tr>
-        <th>Student ID</th>
-        <th>Name</th>
-        <th>email</th>
-        <th>Class</th>
+        <th>ProductID</th>
+        <th>ProductInvoice</th>
+        <th>Price</th>
+        <th>Date</th>
       </tr>
     </thead>
     <tbody>
-      <?php
-      // tạo vòng lặp 
-         //while($r = mysql_fetch_array($result)){
-             foreach ($resultSet as $row) {
-      ?>
-   
-      <tr>
-        <td scope="row"><?php echo $row['stuid'] ?></td>
-        <td><?php echo $row['fname'] ?></td>
-        <td><?php echo $row['email'] ?></td>
-        <td><?php echo $row['classname'] ?></td>
-        
-      </tr>
-     
-      <?php
-        }
-      ?>
-    </tbody>
+  </tbody>
   </table>
 </div>
 </body>

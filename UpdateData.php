@@ -1,54 +1,69 @@
+
+
 <!DOCTYPE html>
 <html>
+<title>UpdateData</title>
+<head>
+    <meta charset="UTF-8">
+    <title>Payment</title>
+    <link rel="stylesheet" href="css/Style1.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <meta name="viewport" content="width=devicew-idth,initial-scale=1.0"> 
+    <link rel="stylesheet" href="css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous"> <!-- fontawesome -->
+    <!-- <meta http-equiv="refresh" content="3"> -->
+    <link href="css/fonts1/css" rel="stylesheet"> <!-- font-family -->
+    <link href="css/fonts2/css" rel="stylesheet"> <!-- font-family -->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="js/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="js/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+</head>
+<!DOCTYPE html>
+<html lang="en">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="css/w3.css">
+<link rel="stylesheet" href="css/css.css">
+<link rel="stylesheet" href="css/font-awesome.min.css">
+<style>
+body {font-family: "Lato", sans-serif}
+.mySlides {display: none}
+</style>
 <body>
 
-<h1>INSERT DATA TO DATABASE</h1>
+<!-- Navbar -->
+<div class="w3-top">
+  <div class="w3-bar w3-black w3-card">
+    <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+  <a href="InsertData.html" class="w3-bar-item w3-button w3-padding-large">Insert</a>
+    <a href="UpdateData.html" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Update</a>
+    <a href="DeleteData.html" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Delete</a>
+    <a href="ConnecttoDB.html" class="w3-bar-item w3-button w3-padding-large w3-hide-small">View</a> 
+<a href="index.html" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Home</a>   
+    <a href="javascript:void(0)" class="w3-padding-large w3-hover-red w3-hide-small w3-right"><i class="fa fa-search"></i></a>
+  </div>
+</div>
+    <head>
+<body style='background-color:#EFF8FB;margin-top:10%'>
+<div align="center">
+<h1>Update DATA TO DATABASE</h1>
+Update database!<ul>
+    <form name="UpdateData" action="update.html" method="POST" >
+<li>NameID:</li><li><input type="text" name="nameid" /></li>
+<li>NameCustomer:</li><li><input type="text" name="namecustomer" /></li>
+<li>Price:</li><li><input type="text" name="price" /></li>
 
-<?php
-ini_set('display_errors', 1);
-echo "Update database!";
-?>
-
-<?php
-
-
-if (empty(getenv("DATABASE_URL"))){
-    echo '<p>The DB does not exist</p>';
-    $pdo = new PDO('pgsql:host=localhost;port=5432;dbname=mydb', 'postgres', '123456');
-}  else {
-     
-   $db = parse_url(getenv("DATABASE_URL"));
-   $pdo = new PDO("pgsql:" . sprintf(
-        "host=ec2-174-129-240-67.compute-1.amazonaws.com;port=5432;user=wrflrxtavasvqh;password=fbfef36049fbd28f1200e3a775a389e014838e86522765e67782f9cf7a3f516b;dbname=d3mmhribgmc6bf",
-        $db["host"],
-        $db["port"],
-        $db["user"],
-        $db["pass"],
-        ltrim($db["path"], "/")
-   ));
-}  
-
-//$sql = 'UPDATE student '
-//                . 'SET name = :name, '
-//                . 'WHERE ID = :id';
-// 
-//      $stmt = $pdo->prepare($sql);
-//      //bind values to the statement
-//        $stmt->bindValue(':name', 'Lee');
-//        $stmt->bindValue(':id', 'SV02');
-        // update data in the database
-//        $stmt->execute();
-
-        // return the number of row affected
-        //return $stmt->rowCount();
-$sql = "UPDATE student SET fname = 'Lee Chan Do' WHERE stuid = 'SV02'";
-      $stmt = $pdo->prepare($sql);
-if($stmt->execute() == TRUE){
-    echo "Record updated successfully.";
-} else {
-    echo "Error updating record. ";
-}
-    
-?>
+<li><input type="submit" value="Save" /></li>
+</form>
+</ul>
+</div>
 </body>
 </html>
