@@ -9,7 +9,7 @@
     <br/>
     <a href="DeleteData.php" target="_blank" >Delete data to the database</a> 
      <br/>
-     
+     <a href="index.php" </a>
 
 </body>
 
